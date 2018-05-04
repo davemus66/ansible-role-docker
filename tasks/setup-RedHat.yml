@@ -16,6 +16,8 @@
     state: present
 
 - name: Add Docker repository.
+  become: yes
+  become_user: root
   get_url:
     url: "{{ docker_yum_repo_url }}"
     dest: '/etc/yum.repos.d/docker-{{ docker_edition }}.repo'
