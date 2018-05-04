@@ -40,41 +40,4 @@ Docker Compose installation options.
     docker_yum_repo_enable_edge: 0
     docker_yum_repo_enable_test: 0
 
-(Used only for RedHat/CentOS.) You can enable the Edge or Test repo by setting the respective vars to `1`.
 
-## Use with Ansible (and `docker` Python library)
-
-Many users of this role wish to also use Ansible to then _build_ Docker images and manage Docker containers on the server where Docker is installed. In this case, you can easily add in the `docker` Python library using the `geerlingguy.pip` role:
-
-```yaml
-- hosts: all
-
-  vars:
-    pip_install_packages:
-      - name: docker
-
-  roles:
-    - geerlingguy.pip
-    - geerlingguy.docker
-```
-
-## Dependencies
-
-None.
-
-## Example Playbook
-
-```yaml
-- hosts: all
-  roles:
-    - geerlingguy.docker
-```
-
-## License
-
-MIT / BSD
-
-## Author Information
-
-This role was created in 2017 by [Jeff Geerling](https://www.jeffgeerling.com/), author of [Ansible for DevOps](https://www.ansiblefordevops.com/).
-# ansible-role-docker

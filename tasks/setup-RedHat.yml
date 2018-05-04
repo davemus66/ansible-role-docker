@@ -9,6 +9,8 @@
     - docker-engine
 
 - name: Add Docker GPG key.
+  become: yes
+  become_user: root
   rpm_key:
     key: https://download.docker.com/linux/centos/gpg
     state: present
