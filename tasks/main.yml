@@ -6,6 +6,8 @@
   when: ansible_os_family == 'Debian'
 
 - name: Install Docker.
+  become: yes
+  become_user: root
   package:
     name: "{{ docker_package }}"
     state: "{{ docker_package_state }}"
