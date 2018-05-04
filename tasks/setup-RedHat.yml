@@ -26,6 +26,8 @@
     mode: 0644
 
 - name: Configure Docker Edge repo.
+  become: yes
+  become_user: root
   ini_file:
     dest: '/etc/yum.repos.d/docker-{{ docker_edition }}.repo'
     section: 'docker-{{ docker_edition }}-edge'
